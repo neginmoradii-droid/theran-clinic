@@ -1,0 +1,145 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'THERAN — Medicina y Estética' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="THERAN - Clínica privada de medicina y estética en Barcelona">
+    <meta property="og:title" content={title}>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theranclinic.com">
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+      <a href="/" class="brand">Theran</a>
+      <div class="nav-links">
+        <a href="/tratamientos">Tratamientos</a>
+        <a href="/#protocolos">Protocolos</a>
+        <a href="/#filosofia">Filosofía</a>
+        <a href="/#contacto">Contacto</a>
+      </div>
+      <a href="#" class="nav-cta" data-open-modal>Reservar valoración</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/tratamientos">Tratamientos</a>
+      <a href="/#protocolos">Protocolos</a>
+      <a href="/#filosofia">Filosofía</a>
+      <a href="/#contacto">Contacto</a>
+      <a href="#" class="btn" data-open-modal>Reservar valoración</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <slot />
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a href="/" class="brand">Theran</a>
+            <p>Clínica privada de medicina y estética en Barcelona. Diseñada para comprenderte.</p>
+          </div>
+          <div>
+            <h4>Tratamientos</h4>
+            <ul>
+              <li><a href="/tratamientos#medicina">Medicina Estética</a></li>
+              <li><a href="/tratamientos#facial">Estética Facial</a></li>
+              <li><a href="/tratamientos#corporal">Tratamientos Corporales</a></li>
+              <li><a href="/tratamientos#protocolos">Protocolos Exclusivos</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Clínica</h4>
+            <ul>
+              <li><a href="/#filosofia">Nuestra filosofía</a></li>
+              <li><a href="/#contacto">Ubicación</a></li>
+              <li><a href="#">Política de privacidad</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contacto</h4>
+            <ul>
+              <li><a href="tel:+34636869022">+34 636 869 022</a></li>
+              <li><a href="mailto:info@theranclinic.com">info@theranclinic.com</a></li>
+              <li><a href="#">Barcelona, España</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2024 THERAN. Todos los derechos reservados.</p>
+          <div>
+            <a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+      <div class="modal__overlay"></div>
+      <div class="modal__panel">
+        <button class="modal__close" id="modalClose" aria-label="Cerrar modal">Cerrar</button>
+        <div id="formView">
+          <span class="eyebrow">Reserva tu valoración</span>
+          <h3>Solicitar cita</h3>
+          <p class="sub">Cuéntanos sobre ti y tus objetivos. Nos pondremos en contacto en 24 horas.</p>
+          <form id="bookingForm">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Nombre completo</label>
+                <input type="text" id="name" name="name" required>
+                <span class="msg">Mínimo 2 caracteres</span>
+              </div>
+              <div class="field">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+                <span class="msg">Email inválido</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="phone">Teléfono</label>
+              <input type="tel" id="phone" name="phone" required>
+              <span class="msg">Mínimo 6 dígitos</span>
+            </div>
+            <div class="field">
+              <label for="interest">Área de interés</label>
+              <select id="interest" name="interest" required>
+                <option value="">Selecciona una opción</option>
+                <option value="medicina">Medicina Estética</option>
+                <option value="facial">Estética Facial</option>
+                <option value="corporal">Tratamientos Corporales</option>
+                <option value="protocolos">Protocolos Exclusivos</option>
+              </select>
+              <span class="msg">Selecciona un área</span>
+            </div>
+            <button type="submit" class="btn">Solicitar valoración</button>
+          </form>
+        </div>
+        <div id="successView" class="form-success">
+          <span class="mark">¡Gracias!</span>
+          <p>Hemos recibido tu solicitud. Nos pondremos en contacto en las próximas 24 horas.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="../scripts/app.js"></script>
+  </body>
+</html>

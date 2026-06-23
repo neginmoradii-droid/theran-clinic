@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Tratamientos — THERAN">
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="wrap">
+      <span class="eyebrow reveal">Tratamientos</span>
+      <h1 class="reveal reveal-d1">Cada protocolo<br>empieza por <em>comprenderte.</em></h1>
+      <p class="lead reveal reveal-d2">Antes de recomendar cualquier tratamiento, escuchamos. Analizamos tu piel, tu cuerpo y tus objetivos. El resultado es siempre un protocolo diseñado para ti — no para una categoría.</p>
+    </div>
+  </header>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="wrap filter-bar__inner">
+      <button data-filter="all" class="active">Todos</button>
+      <button data-filter="medicina">Medicina Estética</button>
+      <button data-filter="facial">Estética Facial</button>
+      <button data-filter="corporal">Corporales</button>
+      <button data-filter="protocolos">Protocolos Exclusivos</button>
+    </div>
+  </div>
+
+  <!-- MEDICINA ESTÉTICA -->
+  <section class="treat-cat" id="medicina" data-group="medicina">
+    <div class="wrap">
+      <div class="treat-cat__head reveal">
+        <span class="cat-tag">Procedimientos médicos supervisados · Resultados naturales y duraderos</span>
+        <h2>Medicina Estética</h2>
+      </div>
+      <div class="treat-list">
+        <div class="treat reveal"><span class="treat__idx">01</span><h3 class="treat__name">Neuromoduladores</h3><p class="treat__desc">Toxina botulínica (Botox) para suavizar líneas de expresión y prevenir el envejecimiento facial de forma natural y precisa.</p></div>
+        <div class="treat reveal"><span class="treat__idx">02</span><h3 class="treat__name">Rellenos &amp; Armonización Facial</h3><p class="treat__desc">Ácido hialurónico para restaurar volúmenes, definir contornos y devolver proporciones naturales al rostro.</p></div>
+        <div class="treat reveal"><span class="treat__idx">03</span><h3 class="treat__name">Estimuladores de Colágeno</h3><p class="treat__desc">Bioestimuladores que activan la producción natural de colágeno para mejorar firmeza, densidad y calidad de la piel a largo plazo.</p></div>
+        <div class="treat reveal"><span class="treat__idx">04</span><h3 class="treat__name">Mesoterapia Facial</h3><p class="treat__desc">Microinyecciones con cócteles de vitaminas, ácido hialurónico y activos que hidratan, iluminan y revitalizan la piel desde dentro.</p></div>
+        <div class="treat reveal"><span class="treat__idx">05</span><h3 class="treat__name">Exosomas</h3><p class="treat__desc">Tratamiento de vanguardia con vesículas extracelulares que aceleran la regeneración celular y mejoran visiblemente la textura y el tono.</p></div>
+        <div class="treat reveal"><span class="treat__idx">06</span><h3 class="treat__name">Lipolíticos &amp; Peelings Médicos</h3><p class="treat__desc">Lipolíticos para reducción de grasa localizada. Peelings médicos para renovación profunda, manchas y rejuvenecimiento controlado.</p></div>
+      </div>
+      <div class="treat-cat__cta reveal"><a href="#" class="btn" data-open-modal>Solicitar valoración médica</a></div>
+    </div>
+  </section>
+
+  <!-- ESTÉTICA FACIAL -->
+  <section class="treat-cat" id="facial" data-group="facial">
+    <div class="wrap">
+      <div class="treat-cat__head reveal">
+        <span class="cat-tag">Tecnología avanzada · Resultados visibles · Protocolos personalizados</span>
+        <h2>Estética Facial</h2>
+      </div>
+      <div class="treat-list">
+        <div class="treat reveal"><span class="treat__idx">01</span><h3 class="treat__name">Limpieza Facial Esencial</h3><p class="treat__desc">Limpieza profunda que mantiene la piel sana y equilibrada. Extracción suave, renovación superficial y mascarilla específica.</p></div>
+        <div class="treat reveal"><span class="treat__idx">02</span><h3 class="treat__name">Limpieza Facial Profunda</h3><p class="treat__desc">Elimina impurezas, oxigena la piel y la prepara para otros tratamientos. Resultado inmediato de frescor y uniformidad.</p></div>
+        <div class="treat reveal"><span class="treat__idx">03</span><h3 class="treat__name">Tratamiento Antimanchas</h3><p class="treat__desc">Protocolo personalizado para manchas solares, tono irregular y uniformidad. Piel visiblemente más homogénea.</p></div>
+        <div class="treat reveal"><span class="treat__idx">04</span><h3 class="treat__name">Microneedling Facial</h3><p class="treat__desc">Estimula la regeneración celular. Mejora textura, poros, marcas y luminosidad mediante microcanales controlados.</p></div>
+        <div class="treat reveal"><span class="treat__idx">05</span><h3 class="treat__name">Radiofrecuencia Facial</h3><p class="treat__desc">Estimula colágeno, mejora firmeza y redefine el óvalo facial. Lifting sin cirugía, resultados progresivos y naturales.</p></div>
+        <div class="treat reveal"><span class="treat__idx">06</span><h3 class="treat__name">Láser Rejuvenecimiento</h3><p class="treat__desc">Activa la producción de colágeno y mejora tono, luminosidad y elasticidad. Ideal para pieles apagadas o con primeros signos de edad.</p></div>
+        <div class="treat reveal"><span class="treat__idx">07</span><h3 class="treat__name">Tratamiento Piel Sensible</h3><p class="treat__desc">Calma rojeces, refuerza la barrera cutánea y aporta confort inmediato a pieles reactivas o con tendencia a irritarse.</p></div>
+        <div class="treat reveal"><span class="treat__idx">08</span><h3 class="treat__name">Tratamiento Anti-Edad</h3><p class="treat__desc">Retinol puro de liberación prolongada. Reafirma, mejora textura, suaviza líneas y potencia la luminosidad desde la primera sesión.</p></div>
+        <div class="treat reveal"><span class="treat__idx">09</span><h3 class="treat__name">Tratamiento Glow — Luminosidad</h3><p class="treat__desc">Oxigenantes y activos que regeneran e iluminan. Glow inmediato y visible, ideal antes de un evento o cuando la piel lo necesita.</p></div>
+      </div>
+      <div class="treat-cat__cta reveal"><a href="#" class="btn" data-open-modal>Reserva tu tratamiento facial</a></div>
+    </div>
+  </section>
+
+  <!-- TRATAMIENTOS CORPORALES -->
+  <section class="treat-cat" id="corporal" data-group="corporal">
+    <div class="wrap">
+      <div class="treat-cat__head reveal">
+        <span class="cat-tag">Aparatología avanzada · Remodelación · Bienestar profundo</span>
+        <h2>Tratamientos Corporales</h2>
+      </div>
+      <div class="treat-list">
+        <div class="treat reveal"><span class="treat__idx">01</span><h3 class="treat__name">Drenaje Linfático</h3><p class="treat__desc">Masaje especializado que activa la circulación linfática, reduce retención de líquidos y aporta ligereza inmediata.</p></div>
+        <div class="treat reveal"><span class="treat__idx">02</span><h3 class="treat__name">Electroestimulación EMS</h3><p class="treat__desc">Impulsos eléctricos que trabajan la musculatura profunda. Ideal para tonificar glúteos, abdomen y piernas con resultados visibles.</p></div>
+        <div class="treat reveal"><span class="treat__idx">03</span><h3 class="treat__name">Cavitación</h3><p class="treat__desc">Ultrasonido que actúa sobre grasa localizada para redefinir la silueta sin cirugía ni tiempo de recuperación.</p></div>
+        <div class="treat reveal"><span class="treat__idx">04</span><h3 class="treat__name">Radiofrecuencia Corporal</h3><p class="treat__desc">Reafirma tejidos, mejora la circulación y combate la flacidez corporal. Resultados progresivos y sostenibles.</p></div>
+        <div class="treat reveal"><span class="treat__idx">05</span><h3 class="treat__name">Dermovacuum RF</h3><p class="treat__desc">Vacuum y radiofrecuencia combinados para mejorar la textura, estimular circulación y remodelar zonas clave.</p></div>
+        <div class="treat reveal"><span class="treat__idx">06</span><h3 class="treat__name">Láser Lipolítico</h3><p class="treat__desc">Tecnología no invasiva para reducción de volumen mediante liberación de grasa de forma indolora y segura.</p></div>
+        <div class="treat reveal"><span class="treat__idx">07</span><h3 class="treat__name">Criolipólisis</h3><p class="treat__desc">Congelación controlada de grasa resistente. Eficaz para abdomen, flancos y muslos. Sin cirugía, sin recuperación.</p></div>
+        <div class="treat reveal"><span class="treat__idx">08</span><h3 class="treat__name">Fotorejuvenecimiento Corporal</h3><p class="treat__desc">Mejora la calidad de la piel corporal, aporta firmeza y reduce el aspecto envejecido o apagado en zonas específicas.</p></div>
+        <div class="treat reveal"><span class="treat__idx">09</span><h3 class="treat__name">Detox Corporal</h3><p class="treat__desc">Exfoliación, envoltura detox y masaje drenante. Un reset completo para el cuerpo y la mente.</p></div>
+      </div>
+      <div class="treat-cat__cta reveal"><a href="#" class="btn" data-open-modal>Reserva tu tratamiento corporal</a></div>
+    </div>
+  </section>
+
+  <!-- PROTOCOLOS EXCLUSIVOS -->
+  <section class="treat-cat section--marfil" id="protocolos" data-group="protocolos">
+    <div class="wrap">
+      <div class="treat-cat__head reveal">
+        <span class="cat-tag">Diseñados exclusivamente en THERAN</span>
+        <h2>Protocolos Exclusivos</h2>
+      </div>
+      <article class="sig reveal">
+        <div class="sig__media">
+          <div class="ph"><img src="/images/glow.jpg" alt="Tratamiento facial Glow Recovery en THERAN"></div>
+        </div>
+        <div class="sig__copy">
+          <span class="sig__tag">Facial · Sesión única</span>
+          <h3>Glow Recovery</h3>
+          <p>Facial intensivo que combina masaje remodelante, microneedling, láser rejuvenecedor y radiofrecuencia con activos personalizados. El rostro recupera luminosidad, firmeza y suavidad en una única sesión. Poros refinados, líneas suavizadas, hidratación profunda y acabado glow inmediato.</p>
+          <a href="#" class="btn" data-open-modal>Consultar disponibilidad</a>
+        </div>
+      </article>
+      <article class="sig sig--rev reveal">
+        <div class="sig__media">
+          <div class="ph"><img src="/images/sculpt.jpg" alt="Tratamiento corporal Sculpt &amp; Lift en THERAN"></div>
+        </div>
+        <div class="sig__copy">
+          <span class="sig__tag">Corporal · Programa progresivo</span>
+          <h3>Sculpt &amp; Lift</h3>
+          <p>Remodelación corporal progresiva que combina radiofrecuencia, vacío, cavitación, electroestimulación y masaje drenante. La piel se vuelve más firme y lisa, el volumen y la retención disminuyen, y la silueta se redefine con un aspecto más tonificado y ligero.</p>
+          <a href="#" class="btn" data-open-modal>Consultar disponibilidad</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="section section--negro">
+    <div class="wrap cta-band reveal">
+      <span class="eyebrow">¿No sabes por dónde empezar?</span>
+      <h2>Diseñemos tu protocolo,<br>paso a paso.</h2>
+      <p class="lead" style="max-width: 46ch; margin-bottom: 2.6rem;">Reserva una valoración y crearemos juntos el plan que mejor responde a tu piel, tu cuerpo y tus objetivos.</p>
+      <a href="#" class="btn btn--light" data-open-modal>Solicitar valoración</a>
+    </div>
+  </section>
+</Layout>
