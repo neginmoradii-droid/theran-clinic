@@ -35,24 +35,30 @@ function redsysSignature(paramsB64, order) {
   return base64UrlEncode(hmac.digest());
 }
 
+const CORS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Content-Type': 'application/json',
+};
+
 exports.handler = async (event) => {
+  if (event.httpMethod === 'OPTIONS') {
+    return { statusCode: 200, headers: CORS, body: '' };
+  }
   if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
+    return { statusCode: 405, headers: CORS, body: JSON.stringify({ error: 'Method Not Allowed' }) };
   }
 
   let body;
   try {
-    body = JSON.parse(event.body);
-  } catch {
-    return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON' }) };
+    body = JSON.parse(event.body || '{}');
+  } catch (e) {
+    return { statusCode: 400, headers: CORS, body: JSON.stringify({ error: 'Invalid JSON' }) };
   }
 
   const { nombre, email, telefono } = body;
   if (!nombre || !email || !telefono) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: 'Faltan datos.' }),
-    };
+    return { statusCode: 400, headers: CORS, body: JSON.stringify({ error: 'Faltan datos.' }) };
   }
 
   // Orden: 12 dígitos numéricos únicos
@@ -83,7 +89,7 @@ exports.handler = async (event) => {
 
   return {
     statusCode: 200,
-    headers: { 'Content-Type': 'application/json' },
+    headers: CORS,
     body: JSON.stringify({
       url:        REDSYS_URL,
       params_b64: paramsB64,
