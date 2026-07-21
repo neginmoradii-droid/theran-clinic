@@ -1,0 +1,102 @@
+---
+// WhatsApp floating widget for THERAN
+const whatsappNumber = "34636869022";
+const whatsappMessage = "Hola, me interesa agendar una valoración en THERAN.";
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+---
+
+<a
+  href={whatsappUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp-widget"
+  aria-label="Contactar por WhatsApp"
+  title="Contactar por WhatsApp"
+>
+  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-1.536.946-2.504 2.623-2.504 4.472 0 2.662 2.164 4.811 5.044 4.811.906 0 1.763-.228 2.565-.684l.74-.416 2.88.48-.617-2.431.161-.26a4.888 4.888 0 001.242-3.45c0-2.849-2.328-5.168-5.497-5.168z"/>
+  </svg>
+  <span class="whatsapp-label">¿Preguntas?</span>
+</a>
+
+<style>
+  .whatsapp-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25d366 0%, #20ba58 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    z-index: 99;
+    transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .whatsapp-widget:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  }
+
+  .whatsapp-widget svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .whatsapp-label {
+    position: absolute;
+    right: 70px;
+    background: var(--negro);
+    color: var(--blanco-roto);
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    font-size: 0.8rem;
+    font-family: var(--sans);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .whatsapp-widget:hover .whatsapp-label {
+    opacity: 1;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .whatsapp-widget {
+      width: 55px;
+      height: 55px;
+      bottom: 1.5rem;
+      right: 1.5rem;
+    }
+
+    .whatsapp-widget svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .whatsapp-label {
+      display: none;
+    }
+  }
+
+  /* Prevenir que interfiera con otros elementos */
+  .whatsapp-widget:focus {
+    outline: none;
+  }
+</style>
